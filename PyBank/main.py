@@ -41,14 +41,7 @@ with open(file_path, 'r') as csvfile:
     print ("Greatest Decrease in Profits: ", f"${min(changeamount)}")
 
 ###Export
-f = open('new.txt', 'a')
-
-f.write("Financial Analysis")
-f.write("-------------------------------")
-f.write(f"Total Months: {len(totalmonths)}")
-f.write(f"Total: ${sum(totalamount)}")
-f.write(f"Average Change: ${round(sum(changeamount)/len(changeamount),2)}")
-f.write(f"Greatest Increase in Profits: ${max(changeamount)}")
-f.write(f"Greatest Decrease in Profits: ${min(changeamount)}")
-
-f.close()
+data = ["Financial Analysis/n", "-------------------------------/n", f"Total Months: {len(totalmonths)}/n", f"Total: ${sum(totalamount)}/n", f"Average Change: ${round(sum(changeamount)/len(changeamount),2)}/n", f"Greatest Increase in Profits: ${max(changeamount)}/n", f"Greatest Decrease in Profits: ${min(changeamount)}/n"]
+f = open('PyBank.txt', 'w')
+f.writelines(data)
+f.close
