@@ -31,7 +31,7 @@ with open(file_path, 'r') as csvfile:
         changeamount.append(totalamount[i+1]-totalamount[i])
     # print(changeamount)
 
-
+###Print Info
     print ("Financial Analysis")
     print ("-------------------------------")
     print (f"Total Months: ", len(totalmonths))
@@ -39,3 +39,16 @@ with open(file_path, 'r') as csvfile:
     print (f"Average Change: ${round(sum(changeamount)/len(changeamount),2)}")
     print ("Greatest Increase in Profits: ", f"${max(changeamount)}")
     print ("Greatest Decrease in Profits: ", f"${min(changeamount)}")
+
+###Export
+f = open('new.txt', 'a')
+
+f.write("Financial Analysis")
+f.write("-------------------------------")
+f.write(f"Total Months: {len(totalmonths)}")
+f.write(f"Total: ${sum(totalamount)}")
+f.write(f"Average Change: ${round(sum(changeamount)/len(changeamount),2)}")
+f.write(f"Greatest Increase in Profits: ${max(changeamount)}")
+f.write(f"Greatest Decrease in Profits: ${min(changeamount)}")
+
+f.close()
